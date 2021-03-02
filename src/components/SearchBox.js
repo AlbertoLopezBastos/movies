@@ -2,9 +2,6 @@ import React from 'react';
 
 class SearchBox extends React.Component {
 
-  constructor(props){
-    super(props);
-  }
 
   onClick = () => {
     let searchValue = document.getElementById('searchMovie').value;
