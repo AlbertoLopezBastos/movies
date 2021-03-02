@@ -1,0 +1,42 @@
+.searchBox {
+ max-width: 80vw;
+ margin: auto;
+ margin-bottom: 4rem;
+ display: flex;
+ justify-items: center;
+ align-items: center;
+
+ &__input {
+  width: 100%;
+  height: 2rem;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 1.2rem 1rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin-right: 1rem;
+ }
+
+ &__btn {
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: $secondary-color;
+  color: $light-color;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  outline: none;
+
+  &:hover {
+   transform: translateY(-2px);
+   cursor: pointer;
+   box-shadow: 0 5px 10px 2px rgba($light-color, 0.4);
+  }
+
+  &:active {
+   transform: translateY(2px);
+   box-shadow: none;
+  }
+ }
+}

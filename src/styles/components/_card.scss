@@ -1,0 +1,43 @@
+.card {
+  align-items: center;
+  border: 3px solid $secondary-color;
+  border-radius: 0.5rem;
+  color: $light-color;
+  cursor: pointer;
+  display:flex;
+  flex-direction:column;
+  justify-content: space-between;
+  justify-items: center;
+  margin: 1rem 1rem;
+  transition: all 0.1s ease-in;
+
+  &-img{
+      width:100%;
+      border-radius: 0.5rem;
+  }
+
+  &-title{
+      width: 100%;
+      font-weight: lighter;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      text-align: center;    
+      border-top: 1px dotted $secondary-color;        
+      border-bottom: 1px dotted $secondary-color;    
+      padding: 0.5rem 0;
+      margin: 0;
+  }
+
+  &-rating{
+      border: 3px dotted $tertiary-color;
+      border-radius: 0.5rem;
+      align-self: flex-end;
+      margin-right: 1rem;
+      padding: 0.40rem;
+  }
+
+  &:hover{
+      border-color: $light-color;
+      box-shadow: 0rem 0rem 0.1em 0.1rem;
+  }
+}
