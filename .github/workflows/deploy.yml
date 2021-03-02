@@ -21,5 +21,5 @@ jobs:
       run: |
         git config --global user.email "elbeto182@hotmail.com"
         git config --global user.name "AlbertoLopezBastos"
-        git remote set-url origin https://git: https://github.com/ on DESKTOP-E26IM5C at 16-ago.-2020 22:03@github.com/AlbertoLopezBastos/movies>.git
+        git remote set-url origin 16903f3da194f9a1df238c4ea3e88e5cd1721060@github.com/AlbertoLopezBastos/movies>.git
         npm run deploy
