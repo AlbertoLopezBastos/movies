@@ -18,4 +18,8 @@ jobs:
     - name: Install Packages
       run: npm install
     - name: Deploy to GH Pages
-      run: npm run deploy
+      run: |
+        git config --global user.email "alberto.lopezbastos@gmail.com"
+        git config --global user.name "AlbertoLopezBastos"
+        git remote set-url origin https://git: https://github.com/ on DESKTOP-E26IM5C at 16-ago.-2020 22:03@github.com/AlbertoLopezBastos/movies>.git
+        npm run deploy
