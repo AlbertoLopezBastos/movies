@@ -1,18 +1,21 @@
-name: React app deployement
-
+name: Deployment
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
+    branches:
+      - master
 jobs:
-  build:
-
+  deploy:
     runs-on: ubuntu-latest
-    
+    strategy:
+      matrix:
+        node-version: [8.x, 10.x, 12.x]
     steps:
     - uses: actions/checkout@v2
-
-    - name: Deploy react app to github pages
-      uses: AlbertoLopezBastos/movies@master
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install Packages
+      run: npm install
+    - name: Deploy to GH Pages
+      run: npm run deploy
