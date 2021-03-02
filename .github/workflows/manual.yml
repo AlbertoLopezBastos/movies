@@ -9,11 +9,8 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
       - name: Build and Deploy
-        uses: AlbertoLopezBastos/movies/.github/workflows@master
+        uses: AlbertoLopezBastos/movies@master
         env:
           ACCESS_TOKEN: ${{ secrets.REACT_APP_API_KEY }}
           BRANCH: gh-pages
