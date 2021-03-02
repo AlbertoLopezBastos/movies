@@ -1,26 +1,29 @@
-name: Deployment
+name: React CI/CD
+
 on:
-  push:
-    branches:
-      - master
+ pull_request:
+ push:
+  branches: [master]
+
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
-    steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Install Packages
-      run: npm install
-    - name: Build page
-      run: npm run build
-    - name: Deploy to gh-pages
-      uses: AlbertoLopezBastos/movies@master
-      with:
-        deploy_key: ${{ secrets.REACT_APP_API_KEY }}
-        publish_dir: ./build
+ build:
+  runs-on: ubuntu-latest
+
+  strategy:
+   matrix:
+    node-version: [14.x]
+
+  steps:
+   - uses: actions/checkout@v2
+   - uses: actions/setup-node@v1
+     with:
+      node-version: ${{ matrix.node-version }}
+
+   - name: Install Packages
+     run: npm i
+   - name: Build page
+     run: npm run build
+   - name: Deploy to gh-pages
+     with:
+      deploy_key: ${{ secrets.REACT_APP_API_KEY }}
+      publish_dir: ./build
