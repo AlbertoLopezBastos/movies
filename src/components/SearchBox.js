@@ -11,8 +11,7 @@ class SearchBox extends React.Component {
       <div className="searchBox">
         <input className="searchBox__input" placeholder="Search Movie" type="search" name="searchMovie" id="searchMovie"/>
         <button className="searchBox__btn" onClick={()=> {this.onClick()}}>Search</button>
-      </div>
-      
+      </div>      
     );
   }
 }

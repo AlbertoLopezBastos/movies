@@ -1,59 +1,83 @@
 .modal{    
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4000;
   background-color: $primary-color;
-  border: 2px solid $secondary-color;
-  border-radius: 1rem;
+  border: 1px solid $secondary-color;
   color: $light-color;
   margin: auto;
-  outline:none;
-  padding: 1rem;
-  transition: all 1s;
-  max-width: 30rem;
+  padding: 2rem;
+  transition: all 0.5s;
+  width: 40vw;
 
-  &-title{
-      align-items: center;
-      text-transform: uppercase;
-      display: flex;
-      justify-content: space-between;
-
-      span{
-          border: 2px dotted $secondary-color;
-          border-radius: 0.5rem;
-          padding: 0.25rem;
-          cursor: pointer;
-          transition: all 0.2s ease-in;
-
-          &:hover{
-              border: 2px dotted $light-color;
-              color: lighten($secondary-color, 20%);
-          }
-      }
+  @media only screen and(max-width: $bp-small) {
+    width: 80vw;
   }
 
-  &-img{
-      border: 1px solid $secondary-color;   
-      border-radius: 1em;
-      max-width: 100%;
+  &__header{
+    display: flex;
+    justify-content: space-between;
   }
 
-  &-overview{
-      line-height: 1.75rem;
+  &__title{
+    text-transform: uppercase;
+    font-size: 2rem;
+  }
+
+  &__rating{
+    border: 2px dotted $secondary-color;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    font-size: 1.5rem;
+    width: min-content;
+
+    &:hover{
+        border: 2px dotted $light-color;
+        color: lighten($secondary-color, 20%);
+    }
+  }
+
+  &__img{
+    margin: 2rem 0;
+    width: 100%;
+  }
+
+  &__overview{
+    font-size: 1.3rem;
+    line-height: 2rem;
+  }
+
+  &__btn{
+    background-color: $secondary-color;
+    text-transform: uppercase;
+    border: none;
+    color: $light-color;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 100;
+    outline:none;
+    padding: 1rem 2rem;    
+    transition: background-color 0.2s ease-in;
+    margin: 2rem 0 0 0;
+
+    &:hover{
+        background-color: lighten($tertiary-color, 20%)  ;
+        color: $secondary-color;  
+    }
   }
 }
 
-.ReactModalPortal > div{
-  opacity: 0;
-}
-
-.ReactModalPortal .ReactModal__Overlay{
-  align-items:center;
-  display:flex;
-  justify-content: center;
-  transition: opacity 500ms ease-in-out;
-}
-
-.ReactModalPortal .ReactModal__Overlay--after-open{
-  opacity: 1;
-}
-.ReactModalPortal .ReactModal__Overlay--before-close{
-  opacity: 0;
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right:0;
+  left:0;
+  background-color: rgba(0,0,0,0.7);
+  padding: 50px;
+  z-index: 1000;
 }
