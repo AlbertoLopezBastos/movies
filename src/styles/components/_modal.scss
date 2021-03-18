@@ -34,6 +34,7 @@
     transition: all 0.2s ease-in;
     font-size: 1.5rem;
     width: min-content;
+    height: min-content;
 
     &:hover{
         border: 2px dotted $light-color;
@@ -63,6 +64,7 @@
     padding: 1rem 2rem;    
     transition: background-color 0.2s ease-in;
     margin: 2rem 0 0 0;
+    float: right;
 
     &:hover{
         background-color: lighten($tertiary-color, 20%)  ;
